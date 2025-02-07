@@ -4,9 +4,12 @@ import Hero from "./Hero.jsx"
 
 function App() {
 
+  const name = "Shirandu";
+  const cartCount = 2;
+
   return (
     <div> 
-      <Navigation/>
+      <Navigation name={name} cartCount={cartCount}/>
       <Hero/>
     </div>
   );

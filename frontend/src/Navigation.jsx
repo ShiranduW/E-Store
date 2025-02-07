@@ -1,9 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 
-function Navigation() {
-
-  const name = "Shirandu";
-  const cartCount = 2;
+function Navigation(props) {
   
   return (
     <nav className="flex items-center justify-between p-8 ml-16 mr-16">
@@ -19,16 +16,27 @@ function Navigation() {
   <div className="flex items-center gap-4">
     <div className="relative flex items-center gap-4">
       <a href="/cart" className="flex items-center gap-4 relative">
-        <p className="text-lg">{cartCount}</p>
+        <p className="text-lg">{props.cartCount}</p>
         <div className="flex items-center gap-2">
           <ShoppingCart />
           Cart
         </div>
-      </a>
-    </div>
-    <p>Hi, {name}</p>
-  </div>
-</nav>
+        </a>
+        </div>
+        {(() => {
+          if (props.name) {
+            return <p>Hi, {props.name}</p>;
+          } else {
+            return (
+              <div>
+                <a href="/signin">Sign In</a>
+                <a href="/signup">Sign Up</a>
+              </div>
+            );
+          }
+        })()}
+      </div>
+    </nav>
   );
 }
 

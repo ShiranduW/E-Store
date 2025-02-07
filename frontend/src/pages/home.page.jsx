@@ -5,8 +5,7 @@ function HomePage() {
   
   return (
     <div>
-      <Navigation/>
-      <Hero/>
+      
     </div>
   );
 }
